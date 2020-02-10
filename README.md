@@ -249,6 +249,7 @@ rm -r $work
 a=("`echo -e $1/*/`")
 for i in ${a[*]}; do echo $i | sed 's:/*$::'; done
 ```
+
 ### File Timestamps
 #### Change file timestamps 1
 ```bash
@@ -270,6 +271,7 @@ change_time "`date -r $f` - 2 hours" # relative to modify time
 
 rm $f
 ```
+
 #### Change file timestamps 2
 ```bash
 # !/bin/bash
@@ -282,8 +284,9 @@ done
 
 rm -r $dir
 ```
+
 ### Date To Unix Timestamp
-````bash
+```bash
 #!/bin/bash
 format='%FT%T+0000'
 date=`TZ='Europe/Zurich' date "+$format"`
@@ -331,6 +334,7 @@ for ((x=0; x <= 20; x++)); do
   printf '%3d | 0x%02x\n' "$x" "$x"
 done
 ```
+
 ### Exec Command Args
 ```bash
 $ php -r 'echo strval(1+1)."\n";'
@@ -339,6 +343,7 @@ $ echo 'select 1+1;' | sqlite3
 $ echo "1+1" | bc
 $ echo -e "GET / HTTP/1.0\n" | nc 'google.com' 80
 ```
+
 ### Add User
 ```bash
 # credentials
@@ -370,6 +375,7 @@ networksetup -setv6automatic Wi-Fi
 ip6conf -x
 ip6conf -a
 ```
+
 ### Scanning
 #### Geo IP
 ```bash
@@ -384,6 +390,7 @@ do
    printf "%s : %s\n" $code $ip
 done
 ```
+
 #### Heartbleed
 ```bash
 # !/bin/bash
