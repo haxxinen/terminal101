@@ -4,6 +4,7 @@ Shell scripting snippets and more.
 ## Table of Contents
 - [Language Syntax](#language-syntax)
     - [Switch](#switch)
+    - [While](#while)
     - [While-Read](#while-read)
     - [Comparisons](#comparisons)
     - [Collections](#collections)
@@ -92,6 +93,37 @@ case `uname` in
        echo 'Default case.' ;;
 esac
 ```
+### While
+
+```
+#!/bin/bash
+# Write a script that prints "Hello" for n-times 
+# (where n is the first script argument)
+
+i=0
+while [ $i -lt $1 ]
+do
+   echo "Hello"
+   i=$(($i+1))
+done
+```
+
+```
+# Factorial N.
+#!/bin/bash
+
+i=1
+p=1
+
+while [ $i -le $1 ]
+do
+  p=$(($p*$i))
+  i=$(($i+1))
+done
+
+echo $p
+```
+
 ### While-Read
 ```bash
 #!/bin/bash
