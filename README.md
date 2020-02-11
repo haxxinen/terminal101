@@ -10,6 +10,7 @@ Shell scripting snippets and more.
     - [Collections](#collections)
     - [Functions](#functions)
 - [System](#system)
+    - [General System Info](#general-system-info)
     - [Arch-Info](#arch-info)
     - [Distro-Info](#distro-info)
     - [Debian-Sources](#debian-sources)
@@ -206,6 +207,16 @@ print_args "$v" 'arg'
 ```
 
 ## System
+
+### General System Info
+```
+$ uname -mrs
+$ uname -a
+$ cat /proc/version
+$ cat /etc/*release
+$ lsb_release -a
+```
+
 ### Arch-Info
 ```bash
 # Arch-Short
