@@ -41,6 +41,7 @@ Shell scripting snippets and more.
         - [IP Address](#ip-address)
     - [Ping](#ping)
     - [Netstat](#netstat)
+    - [LSOF](#lsof)
     - [Netcat](#netcat)
     - [Curl](#curl)
     - [Processes](#processes)
@@ -539,6 +540,13 @@ $ netstat -an | grep ':22'
 # show net ifaces (ifconfig-like)
 $ netstat -i{e}
 ```
+
+### LSOF
+```
+$ lsof -iTCP -sTCP:LISTEN
+$ lsof -iTCP -sTCP:LISTEN -P -n
+```
+
 
 ### Netcat
 #### Shell-door
