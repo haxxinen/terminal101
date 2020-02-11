@@ -29,6 +29,7 @@ Shell scripting snippets and more.
     - [Exec Command Args](#exec-command-args)
     - [Add User](#add-user)
 - [Networking](#networking)
+    - [Basic Setup](#basic-setup)
     - [IPv6](#ipv6)
     - [Scanning](#scanning)
         - [Geo IP](#geo-ip)
@@ -363,6 +364,15 @@ sudo bash -c "echo '$user  ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
 ```
 
 ## Networking
+
+### Basic Setup
+```
+$ ip link show
+$ netstat -i
+$ /sbin/ifconfig -a
+$ /sbin/dhclient eth0
+```
+
 ### IPv6
 ```bash
 networksetup -setv6off Ethernet
