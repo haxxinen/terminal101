@@ -61,6 +61,7 @@ Shell scripting snippets and more.
         - [Shuf](#shuf)
         - [Dev-Rand](#dev-rand)
 - [Text Processing](#text-processing)
+    - [Grep](#grep)
     - [Quoted Text](#quoted-text)
     - [Remove Blank](#remove-blank)
     - [Start-End](#start-end)
@@ -818,6 +819,33 @@ $ od -An -N2 -i /dev/random
 $ < /dev/random tr -dc A-Z-a-z-0-9 | head -c 10
 ```
 ## Text Processing
+
+### Grep
+```
+$ grep 'word' filename
+$ grep 'word' file1 file2 file3
+$ grep 'string1 string2'  filename
+$ cat otherfile | grep 'something'
+$ ps aux | grep /usr
+$ ps aux | grep /usr --color
+
+$ grep root /etc/passwd
+$ grep -i "boo" /etc/passwd
+
+$ grep -r "192.168.1.5" /etc/  #recursively
+$ grep -hr "192.168.1.5" /etc/ #hide folders
+
+$ grep -w "boo" file                    #search for word in file
+$ egrep -w 'word1|word2' /path/to/file  #search two different words
+$ grep -c 'word' /path/to/file          #count occurrences
+$ grep -n 'root' /etc/passwd
+
+$ grep -v bar /path/to/file
+$ dmesg | egrep '(s|h)d[a-z]'
+$ cat /proc/cpuinfo | grep -i 'Model'
+$ grep -i 'Model' /proc/cpuinfo
+$ grep -l 'main' *.c
+```
 
 ### Call bash function from `awk`
 ```bash
