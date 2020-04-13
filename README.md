@@ -811,6 +811,7 @@ $ min=1
 $ max=10
 $ lines=3
 $ shuf -i $min-$max -n $lines
+$ shuf -n 4 /tmp/proxies.txt
 ```
 #### Dev-Rand
 ```bash
