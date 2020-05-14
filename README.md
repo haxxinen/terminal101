@@ -50,6 +50,7 @@ Shell scripting snippets and more.
         - [Service Manager](#service-manager)
 - [Security](#security)
     - [OpenSSL](#openssl)
+        - [HTTPs Cert](#https-cert)
         - [Passwords and Hashing](#passwords-and-hashing)
             - [Crypto Random](#crypto-random)
             - [Hashing (fast)](#hashing-fast)
@@ -690,6 +691,14 @@ $ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
 
 ## Security
 ### OpenSSL
+
+#### HTTPs Cert
+```
+$ site='example.org'
+$ echo -n | openssl s_client -connect $site:443 \
+| sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > /tmp/$site.pem
+```
+
 #### Passwords and Hashing
 ##### Crypto Random
 ```bash
