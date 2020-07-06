@@ -1017,40 +1017,6 @@ postgres@kali:/root$ psql -d metasploit -U user -h localhost
 $ msfconsole
 msf > db_connect user:password@localhost:5432/metasploit
 ```
-# iOS
-## Installed apps
-```bash
-$ ll ~/Containers/Bundle/Application/*                     # path to installed apps
-$ ll ~/Containers/Bundle/Application/* | grep .app
-```
-## Safari data
-```bash
-$ ~/Containers/Data/Application/*/Library/Safari/Thumbnails/        # screenshots of opened tabs
-$ ~/Containers/Data/Application/*/Library/Safari/SuspendState.plist # links of opened tabs
-```
-## Find sqlites
-```bash
-$ sudo find ~/Containers/Data/Application/ -name *.sqlite
-```
-## Collect sqlites
-```bash
-#!/bin/bash
-
-rm -r dbs dbs.zip
-mkdir dbs
-
-declare -a rows
-while IFS= read -r -d '' n; do
-  cp "$n" dbs
-  #rows+=( "$n" )
-done < <(sudo find Containers -name *.sqlite -print0)
-#done < <(sudo find / -name *.sqlite -print0)
-
-zip -r9 dbs.zip dbs && rm -r dbs
-
-#printf '%q\n' "${rows[@]}"
-```
-
 
 ### Disable/Enable macOS Dashboard
 ```
