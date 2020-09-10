@@ -417,6 +417,14 @@ sudo bash -c "echo '$user  ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
 ```
 # sudo ifmetric eth0 50 && sudo ifmetric wlan0 0 # WiFi > LAN
 # route -n
+
+# default via 192.168.0.1 dev eth0
+# route del default
+# route add default gw 192.168.0.1
+
+# route add -host 192.168.1.51 reject
+# route add -net 192.168.1.0 netmask 255.255.255.0 reject
+# ping 192.168.1.51
 ```
 
 ### Basic Setup
