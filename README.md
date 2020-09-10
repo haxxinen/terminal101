@@ -31,6 +31,7 @@ Shell scripting snippets and more.
     - [Exec Command Args](#exec-command-args)
     - [Add User](#add-user)
 - [Networking](#networking)
+    - [Routing](#routing)
     - [Basic Setup](#basic-setup)
     - [IPv6](#ipv6)
     - [Scanning](#scanning)
@@ -410,6 +411,13 @@ sudo bash -c "echo '$user  ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
 ```
 
 ## Networking
+
+### Routing
+
+```
+# sudo ifmetric eth0 50 && sudo ifmetric wlan0 0 # WiFi > LAN
+# route -n
+```
 
 ### Basic Setup
 ```
