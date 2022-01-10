@@ -64,6 +64,7 @@ Shell scripting snippets and more.
         - [Dev-Rand](#dev-rand)
 - [Text Processing](#text-processing)
     - [Grep](#grep)
+    - [Zipgrep](#zipgrep)
     - [Quoted Text](#quoted-text)
     - [Remove Blank](#remove-blank)
     - [Start-End](#start-end)
@@ -871,6 +872,26 @@ $ dmesg | egrep '(s|h)d[a-z]'
 $ cat /proc/cpuinfo | grep -i 'Model'
 $ grep -i 'Model' /proc/cpuinfo
 $ grep -l 'main' *.c
+
+$ grep root /etc/passwd
+$ grep -n root /etc/passwd
+$ grep -v bash /etc/passwd | grep -v nologin
+$ grep -c false /etc/passwd
+$ grep -i ps ~/.bash* | grep -v history
+$ grep ^root /etc/passwd
+$ grep :$ /etc/passwd
+$ grep export ~/.bashrc | grep '\<PATH'
+$ grep -w / /etc/fstab
+$ grep [yf] /etc/group
+$ grep '\<c...h\>' /usr/share/dict/words
+$ grep '\<c.*h\>' /usr/share/dict/words
+$ grep * /etc/profile
+$ grep '*' /etc/profile
+```
+
+### Zipgrep
+```
+$ zipgrep "Text" media.zip
 ```
 
 ### Call bash function from `awk`
