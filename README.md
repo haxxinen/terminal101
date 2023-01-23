@@ -1060,3 +1060,11 @@ msf > db_connect user:password@localhost:5432/metasploit
 $ defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock
 $ defaults write com.apple.dashboard mcx-disabled -boolean NO && killall Dock
 ```
+
+### macOS third-party app signing
+```
+$ codesign --verify --verbose /Applications/Logic\ Pro\ X.app
+$ spctl --assess --verbose /Applications/Logic\ Pro\ X.app
+$ find /Applications -d 1 -name "*.app" -exec codesign --verify --verbose {} \;
+$ find /Applications -d 1 -name "*.app" -exec spctl --assess --verbose {} \;
+```
