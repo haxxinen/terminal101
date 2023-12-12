@@ -516,8 +516,8 @@ $ sudo cat /proc/net/ip_conntrack | awk '{print $4}' | sort -u | grep src | awk 
 
 # External IP
 # OSX + Linux
-$ curl https://icanhazip.com
-$ curl -sSL getip.ro | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' | sort -u
+$ curl -4 ipv4.icanhazip.com
+$ curl -6 ipv6.icanhazip.com
 $ dig +short myip.opendns.com @resolver1.opendns.com
 
 # External IP-Proxychains
@@ -530,6 +530,11 @@ $ host -t A google.com | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}'
 
 # IPv6 - OSX + Linux
 $ host -t AAAA facebook.com | sed 's/.*address //g'
+
+# IPv6 - Linux
+$ interface=`ip -6 route show | awk '/^default/ {print $5}'`
+$ ip=`ip addr show $interface | awk '/inet6 .* scope global/ {print $2}'`
+$ echo "$ip - $interface"
 ```
 
 ### Ping
